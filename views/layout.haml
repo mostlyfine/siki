@@ -1,0 +1,14 @@
+!!! XML
+!!! Stict
+
+%html
+  %head
+    %title= params[:page] || 'SinatraWiki'
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html', :charset => 'utf-8'}
+    %link{:rel => 'stylesheet', :type => 'text/css', :href => '/css/style.css'}
+  %body
+    = link_to 'top', '/?page=FrontPage'
+    = link_to 'list', '/list'
+    - if @page
+      = link_to 'edit', "/edit?page=#{@page}"
+    = yield

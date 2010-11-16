@@ -1,0 +1,6 @@
+- form_tag '/', :method => 'put' do
+  = text_field_tag :page, :value => params[:page], :size => 30
+  %div
+    = text_area_tag :body, :value => @content, :cols => 40, :rows => 10
+  = link_to 'back', "/?page=#{params[:page]}"
+  = submit_tag 'save'
