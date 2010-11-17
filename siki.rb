@@ -33,6 +33,7 @@ get '/edit' do
 end
 
 put '/' do
+  FileUtils.mkdir_p(datadir) unless File.exist? datadir
   File.open(filepath(params[:page]), 'w') do |file|
     file.puts params[:body]
   end
